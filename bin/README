@@ -1,0 +1,12 @@
+JAMFReport.py
+
+JAMFReport utilizes the JAMF API to generate a report of your install broken down by site.
+
+The tool has 2 major components:
+	1. Downloads the payloads of every configuration profile and saves them by name and sorted into categories under each site
+	2. Generates a scoping report for each site showing how what policies/configs are scoped to the group, as well as
+	various group interdependancies.
+
+To use JAMFReport edit the config.py file, filling in the USERNAME, PASSWORD, APIURL, and BACKUP_ROOT variables with your organization's credentials.
+Then, simply run 'python JAMFReport.py'. The script may take some time to run as it will be making many API calls, but after exiting your BACKUP_ROOT
+should contain the scoping information described above.
